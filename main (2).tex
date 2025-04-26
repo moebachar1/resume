@@ -1,12 +1,274 @@
-\documentclass{article}%
-\usepackage[T1]{fontenc}%
-\usepackage[utf8]{inputenc}%
-\usepackage{lmodern}%
-\usepackage{textcomp}%
-\usepackage{lastpage}%
-%
-%
-%
-\begin{document}%
-\normalsize%
+%-------------------------
+% Resume in Latex
+% Author
+% License : MIT
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={},
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Mohamed BACHAR}
+\newcommand{\course}{Double Diplôme : Génie Industriel, IA & Data Science / Master Recherche CPSE}
+\newcommand{\roll}{}
+\newcommand{\phone}{+33 7 45 50 19 06}
+\newcommand{\emaila}{mohamed.bachar.fr@gmail.com}
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+  % Colonne 1 : Image
+  \begin{minipage}{0.15\linewidth}
+    \includegraphics[width=\linewidth]{photo.png}
+    
+  \end{minipage}
+  \hspace{1mm}
+  &
+  % Colonne 2 : Informations personnelles (centrées verticalement)
+  \begin{minipage}{\linewidth}
+    \raggedright
+    \textbf{\Large \name} \\
+    {
+
+Ingénieur jeune diplômé en IA et Data, je possède une solide expertise en Data Management et en gouvernance, acquise lors de missions de pilotage et de conception de solutions analytiques. J’ai collaboré à l’élaboration de feuilles de route numériques et à la mise en place de pipelines ETL intégrant des modèles de NLP et de Vision par Ordinateur. Plusieurs projets orientés KPI, tableaux de bord et systèmes RAG m’ont permis de consolider mes compétences en Machine Learning et Big Data. Autonome et créatif, je m’investis pleinement pour délivrer des solutions innovantes.
+    }
+    
+  \end{minipage}
+\end{tabularx}
+
+\vspace{3mm}
+{\footnotesize \faPhone}\ \phone \hspace{2mm}
+    \href{mailto:\emaila}{\footnotesize \faEnvelope\ \emaila}
+    \hspace{2mm}
+    \href{https://linkedin.com}{\footnotesize \faLinkedin\ LinkedIn}
+    \hspace{2mm}
+    {\footnotesize \faMapMarker Aix-En-Provence, France}
+    \hspace{2mm}
+    {\footnotesize \faGraduationCap Arts et Métiers}
+
+%-----------EDUCATION-----------
+\section{\textbf{Formation Académique}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Master  
+      CPSE (Cyber-Physical Systems Engineering)}{En cours}
+      {Arts et Métiers ParisTech, Aix-en-Provence, France}{Sept. 2024 – Présent}
+    \resumeSubheading
+      {Cycle d’ingénieur en Génie Industriel : IA \& Data Science}{En cours}
+      {ENSAM Meknès, Maroc}{Sept. 2022 – Présent}
+    \resumeSubheading
+      {Cycle préparatoire intégré}{Terminé}
+      {ENSAM Meknès, Maroc}{Sept. 2019 – Juin 2022}
+    \resumeSubheading
+      {Baccalauréat Sciences Mathématiques B}{Obtenu}
+      {Lycée Moulay Slimane, Fès, Maroc}{Juin 2019}
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{Expériences Professionnelles}}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+  {Stage PFE : Consultant Data – TNP Consultants}{Février 2025 – Présent}
+  {Paris, France}{}
+  \resumeItemListStart
+    \item {Participation à une mission de PMO pour le pilotage de projets numériques, incluant la collecte et l’analyse des données d’avancement, la configuration d’un outil de gestion de projet et la mise en place d’indicateurs clés d’alignement métier.}
+    \item {Contribution à l’élaboration d’un Schéma Directeur du Numérique (SDN) : audit de la maturité data, définition d’une vision stratégique à cinq ans et production de fiches initiatives pour accompagner la gouvernance des données au sein de l’organisation.}
+    \item {Réalisation d’un benchmark comparatif d’outils de catalogage de données (Apache Atlas, Amundsen, DataHub, Collibra...) pour orienter la sélection d’une solution adaptée aux enjeux de Data Management et de conformité de l’établissement.}
+    \item {Co-rédaction d’une proposition commerciale autour de l’API Management, intégrant une trajectoire de déploiement et des préconisations pour la sécurisation et la valorisation des flux de données, en cohérence avec les pratiques de Data Advisory.}
+    \item {Conception de cas d’usage IA \& Data (prédiction, automatisation) pour illustrer le potentiel d’une Data Strategy ambitieuse, tout en structurant une méthodologie d’évaluation de la performance SI alignée sur les bonnes pratiques de Data Governance.}
+  \resumeItemListEnd
+    \resumeSubheading
+  {Stage : AI Engineer  – Centre International d’Intelligence Artificielle du Maroc}{Juillet 2024 – Août 2024}
+  {Rabat, Maroc}{}
+  \resumeItemListStart
+    \item {Developed a custom pipeline that enabled the simultaneous optimization of camera parameters and scene representation.}
+    \item {Analyzed performance metrics including Loss, PSNR, rotation, and translation errors, identifying areas for improvement.}
+    \item {Demonstrated an aptitude for data governance and strategic advisory by leveraging advanced metric analysis to inform data-driven decisions and aligning technical implementations with organizational objectives.}
+  \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Stage : Machine learning Engineer – Office National des Chemins de Fer (ONCF)}{Juillet 2023 – Août 2023}
+      {Meknès, Maroc}{}
+      \resumeItemListStart
+        \item {Application de techniques de data science pour la maintenance prédictive.}
+        \item {Développement de modèles de détection d’anomalies et optimisation du système via SQL et apprentissage supervisé.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+
+%-----------PROJECTS-----------------
+\section{\textbf{Projets Académiques}}
+\resumeSubHeadingListStart
+  \resumeProject
+    {Assistants IA pour examens systématiques industriels (LLM)}{}{}{}
+    \resumeItemListStart
+      \item {Automatisation des systematic reviews via LLMs et NLP selon la méthode PRISMA}
+      \item {Extraction automatique de textes, figures et tableaux, création de base vectorielle}
+      \item {Mise en œuvre d’un système RAG (Retrieval-Augmented Generation) innovant}
+    \resumeItemListEnd
+  \resumeProject
+    {Plateforme Hybride Data \& NLP}{}{}{}
+    \resumeItemListStart
+      \item {Implémentation d’un pipeline ETL complet couplé à des modèles LLM pour l’extraction et la structuration de données}
+      \item {Déploiement de KPI et de tableaux de bord interactifs pour la Business Intelligence}
+      \item {Utilisation d’algorithmes de Machine Learning et d’analyses statistiques pour la valorisation des données}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+%-----------TECHNICAL SKILLS-----------------
+\section{\textbf{Compétences}}
+\resumeSubHeadingListStart
+  \resumeSubItem{Langages \& Frameworks:}{Python, Java, C/C++, C#, JavaScript, .NET Framework, Flask, React, SQL}
+  \resumeSubItem{Outils \& Librairies:}{PyTorch, TensorFlow, Keras, Scikit-learn, Pandas, Numpy, Matplotlib, OpenCV, YOLO, LangChain, Aurora Vision, Tanagra, Tableau, Minitab, Hadoop, Apache Spark, AWS, Azure, Collibra, Teradata, Microstrategy, Informatica, Snowflake, GCP}
+  \resumeSubItem{IA \& Data Science:}{Intelligence Artificielle, Machine Learning, Data Science, Big Data, Modélisation prédictive, Analyse de données, Statistiques, Data Visualization, Data Analytics, Data Management, Business Intelligence (BI), Extract, Transform, Load (ETL)}
+  \resumeSubItem{Industrie \& Systèmes:}{IA industrielle, Reconnaissance visuelle de défauts, Optimisation de procédés, Industrie 4.0, Systèmes de production, Chaîne de production}
+  \resumeSubItem{Soft Skills:}{Rigueur, Appétence terrain, Résolution de problèmes, Créativité, Force de proposition, Adaptabilité, Curiosité, Sens de l'analyse, Travail en équipe}
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+
+%-----------CERTIFICATIONS-----------------
+\section{\textbf{Certificats}}
+\resumeSubHeadingListStart
+  \resumeSubItem{Deep Learning Specialization}{ – Coursera (DeepLearning.AI)}
+  \resumeSubItem{Machine Learning Specialization}{ – Coursera (DeepLearning.AI)}
+  \resumeSubItem{Analyze Data with Python}{ – Codecademy}
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+%-----------LANGUAGES-----------------
+\section{\textbf{Langues}}
+\resumeSubHeadingListStart
+  \resumeSubItem{Français}{ – Courant}
+  \resumeSubItem{Anglais}{ – Courant}
+  \resumeSubItem{Arabe}{ – Langue maternelle}
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+%-----------EXTRACURRICULAR ACTIVITIES-----------------
+\section{\textbf{Activités Parascolaires}}
+\resumeSubHeadingListStart
+  \resumePOR{Président du club informatique Gadz’IT}{}{2023 – 2024}
+  \resumePOR{Membre de l’équipe masculine de volley}{}{2022 – 2024}
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+
 \end{document}
